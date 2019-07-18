@@ -1,12 +1,29 @@
 # mdnb
 
 
-:warning:PRE-ALPHA, SEEKING INPUT:warning:
+:warning: PRE-ALPHA, SEEKING INPUT :warning:
 
-`mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It works on a plane.
+also the command line options have not been implemented yet, will do that this weekend.
+
+`mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It's supposed to work on a plane. Still need to get mathjax working offline, but most other things should work.
+
+
+SOME DAY:
 
 ```bash
 $ npx mdnb .
+```
+
+but until it's published, if you want to try it, clone this repo and then do
+
+```bash
+$ npm link
+```
+
+and then spin it up with
+
+```bash
+$ mdnb
 ```
 
 ## Installation
@@ -40,6 +57,8 @@ If you discover a security vulnerability in mdnb, please make an issue. That sai
 ## Customization
 
 You probably know some css. Probably more than me. I'd say you should dive in and override whatever you want.
+
+TODO provide some copy-pasta
 
 ```css
 /* change theme color */
