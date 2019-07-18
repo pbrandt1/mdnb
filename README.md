@@ -105,7 +105,10 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [ ] mathjax offline
 - [ ] change color theme to blue for release
 - [ ] command line options
-- [ ] make demo plotly
+- [x] make demo plotly
 - [ ] add screenshots to readme, show live reloading
 - [ ] make the navbar nice
 - [ ] make the hamburger menu work
+- [ ] add options for title and make index.html a template
+- [ ] make a search bar
+- [ ] make loading fast by rendering before executing javascript
