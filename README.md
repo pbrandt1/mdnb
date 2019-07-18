@@ -11,13 +11,14 @@ also the command line options have not been implemented yet, will do that this w
 SOME DAY:
 
 ```bash
-$ npx mdnb .
+$ npx mdnb
 ```
 
-but until it's published, if you want to try it, clone this repo and then do
+but until it's published, if you want to try it, clone this repo and then npm link it
 
 ```bash
-$ npm link
+git clone https://github.com/pbrandt1/mdnb.git
+npm link
 ```
 
 and then spin it up with
@@ -98,3 +99,13 @@ Contribute in whatever way you seem appropriate. Just be nice.
 ## License
 
 [MIT](LICENSE)
+
+## todo
+
+- [ ] mathjax offline
+- [ ] change color theme to blue for release
+- [ ] command line options
+- [ ] make demo plotly
+- [ ] add screenshots to readme, show live reloading
+- [ ] make the navbar nice
+- [ ] make the hamburger menu work
