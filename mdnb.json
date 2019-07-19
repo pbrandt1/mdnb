@@ -1,0 +1,11 @@
+{
+  "port": 8080,
+  "title": "mdnb",
+  "MathJax": {
+    
+  },
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

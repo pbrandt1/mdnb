@@ -3,8 +3,6 @@
 
 :warning: PRE-ALPHA, SEEKING INPUT :warning:
 
-also the command line options have not been implemented yet, will do that this weekend.
-
 `mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It's supposed to work on a plane. Still need to get mathjax working offline, but most other things should work.
 
 
@@ -26,6 +24,8 @@ and then spin it up with
 ```bash
 $ mdnb
 ```
+
+See `mdnb --help` for command line options, including `-p` for http port.
 
 ## Installation
 
@@ -55,6 +55,11 @@ $ npm install mdnb
 
 If you discover a security vulnerability in mdnb, please make an issue. That said, it is not meant to be "safe". Like don't go reporting that omg there is an `eval()` in the code. Yes, I put it there. But please do tell me if one of the dependnecies is phoning home or something.
 
+## Examples
+
+screenshots please
+
+
 ## Customization
 
 You probably know some css. Probably more than me. I'd say you should dive in and override whatever you want.
@@ -67,6 +72,10 @@ pre {
     border-color: #000000;
 }
 ```
+
+## Really major cusotmization
+
+Just fork the repo and go nuts.
 
 ## Tests
 
@@ -104,11 +113,12 @@ Contribute in whatever way you seem appropriate. Just be nice.
 
 - [ ] mathjax offline
 - [ ] change color theme to blue for release
-- [ ] command line options
+- [x] command line options
 - [x] make demo plotly
-- [ ] add screenshots to readme, show live reloading
-- [ ] make the navbar nice
+- [ ] make the navbar scroll and stuff
 - [ ] make the hamburger menu work
 - [ ] add options for title and make index.html a template
 - [ ] make a search bar
 - [ ] make loading fast by rendering before executing javascript
+- [ ] allow custom css somehow
+- [ ] add screenshots to readme, show live reloading

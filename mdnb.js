@@ -8,8 +8,10 @@ require('colors')
 function mdnb(options) {
     options = options || {}
     options.port = options.port || 8080
-    options.root = options.root || path.resolve(__dirname, '..', '..'),
+    options.root = options.root || path.resolve('.')
     options.ignore = options.ignore || ['node_modules', 'git']
+    options.title = options.title || path.basename(path.resolve('.'))
+    options.MathJax = options.MathJax || {}
 
     const app = express()
     var http = require('http').createServer(app);
@@ -67,7 +69,6 @@ function mdnb(options) {
     // static files yo
     app.use(express.static(options.root))
     app.use(express.static(path.join(__dirname, 'static-files')))
-
 
     // helper
     function mdToFile(md) {
