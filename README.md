@@ -5,54 +5,34 @@
 
 `mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It works on an airplane.
 
-SOME DAY:
-
-```bash
-$ npx mdnb
-```
-
-but until it's published, if you want to try it, clone this repo and then npm link it
-
 ```bash
 git clone https://github.com/pbrandt1/mdnb.git
+cd mdnb
 npm link
-```
-
-and then spin it up with
-
-```bash
-$ mdnb
+mdnb
 ```
 
 See `mdnb --help` for command line options, including `-p` for http port.
 
 ## Installation
 
-This is a [Node.js](https://nodejs.org/en/) module available through the
-[npm registry](https://www.npmjs.com/).
+This is a [Node.js](https://nodejs.org/en/) module available through the [npm registry](https://www.npmjs.com/).
 
 Before installing, [download and install Node.js](https://nodejs.org/en/download/).
 
-Installation is done using the
-[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+Installation is done using the [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```bash
-$ npm install mdnb
+$ npm install -g mdnb
 ```
 
 ## Features
 
 - Github-flavored Markdown
-- The javascript blocks run in your browser
+- The javascript blocks actually run in your browser
 - Plotly support
 - MathJax support
 - emojione for a consistent emoji experience :woman_facepalming:
-
-## Docs & Community
-
-### Security Issues
-
-If you discover a security vulnerability in mdnb, please make an issue. That said, it is not meant to be "safe". Like don't go reporting that omg there is an `eval()` in the code. Yes, I put it there. But please do tell me if one of the dependnecies is phoning home or something.
 
 ## Examples
 
@@ -60,6 +40,8 @@ screenshots please
 
 
 ## Customization
+
+Copy the default mdnb.json file and change what you want. Put it in the root directory of your thing. If you don't want to clutter your root, you can use the `-f` option, like `mdnb -f "some/config/file.json"`.
 
 You probably know some css. Probably more than me. I'd say you should dive in and override whatever you want.
 
@@ -96,6 +78,7 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [Public Sans](https://github.com/uswds/public-sans)
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
 - [emojione](https://github.com/joypixels/emojione)
+- [node.js](https://github.com/nodejs/node)
 
 ## Similar things
 
@@ -111,7 +94,6 @@ Contribute in whatever way you seem appropriate. Just be nice.
 ## todo
 
 - [x] mathjax offline
-- [ ] change color theme to blue for release
 - [x] command line options
 - [x] make demo plotly
 - [ ] make the navbar scroll and stuff

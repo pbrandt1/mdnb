@@ -1,9 +1,15 @@
 {
   "port": 8080,
+
   "title": "mdnb",
+  "favicon": "favicon.png",
+  "custom-css": "mdnb-theme.css",
+  "custom-head": "mdnb-head.html",
+
   "MathJax": {
     
   },
+  
   "ignore": [
     "node_modules",
     ".git"
