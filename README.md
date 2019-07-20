@@ -3,8 +3,7 @@
 
 :warning: PRE-ALPHA, SEEKING INPUT :warning:
 
-`mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It's supposed to work on a plane. Still need to get mathjax working offline, but most other things should work.
-
+`mdnb` is a markdown notebook with plotly and mathjax support. Something between mdbook and jupyter. It works on an airplane.
 
 SOME DAY:
 
@@ -111,7 +110,7 @@ Contribute in whatever way you seem appropriate. Just be nice.
 
 ## todo
 
-- [ ] mathjax offline
+- [x] mathjax offline
 - [ ] change color theme to blue for release
 - [x] command line options
 - [x] make demo plotly
