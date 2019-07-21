@@ -8,12 +8,14 @@ function print() {
 
     // if an print log div already exists, append to that. otherwise create a new one.
     var div;
-    if (mdnb.current_node.nextSibling && mdnb.current_node.nextSibling.classList.contains('message')) {
+    if (mdnb.current_node.nextSibling
+        && mdnb.current_node.nextSibling.classList
+        && mdnb.current_node.nextSibling.classList.contains('message')) {
         div = mdnb.current_node.nextSibling;  
     } else {
         div = document.createElement('div')
         div.classList.add('message')
-        div.innerHTML = "<div>Output:</div><textarea />";
+        div.innerHTML = "<div>Output:</div><textarea readonly />";
         div = insertAfter(div, mdnb.current_node)
     }
 

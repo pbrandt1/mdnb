@@ -84,6 +84,7 @@ socket.on('md', (str) => {
                 console.error(e)
                 var div = document.createElement('div')
                 div.id = Math.random().toString(32).slice(2)
+                div.classList.add('message')
                 div.classList.add('error-message')
                 div.innerText = 'Error: ' + e.message
                 var $div = insertAfter(div, mdnb.code_node)
@@ -224,3 +225,25 @@ document.querySelector(".nav-close").addEventListener('click', () => {
 // start the party
 goto(location.pathname);
 
+
+
+// fun stuff
+mdnb.bind = function(classname, fn) {
+    document.querySelectorAll(classname).forEach(node => {
+        function getValue() {
+            var value = node.value
+            if (node.type === 'number') {
+                value = parseFloat(node.value);
+            }
+            return value
+        }
+
+        // catch it on change
+        node.addEventListener('change', (e) => {
+            fn(getValue());
+        })
+
+        // and also do it once on load
+        fn(getValue());
+    })
+}
