@@ -30,7 +30,7 @@ function mdnb(options) {
 
     // handle options.custom_css
     var customTheme = ''
-    if (fs.existsSync(path.resolve(options.custom_css))) {
+    if (fs.existsSync(options.custom_css)) {
         customTheme = fs.readFileSync(options.custom_css, 'utf8')
     } else if (options.custom_css) {
         console.log('Warning'.red.bold + ` custom css file "${options.custom_css}" not found`.bold)

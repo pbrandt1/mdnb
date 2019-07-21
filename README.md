@@ -123,8 +123,7 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [ ] make the navbar scroll and stuff
 - [ ] make the hamburger menu work
 - [x] add options for title and make index.html a template
-- [ ] make a search bar
-- [ ] make loading fast by rendering before executing javascript
 - [x] allow custom css somehow
 - [x] allow loading custom header html
 - [ ] add screenshots to readme, show live reloading
+- [ ] html inside markdown

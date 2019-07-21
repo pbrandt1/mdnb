@@ -1,4 +1,8 @@
-a {
+body {
+  background-color: #f8f8f8;
+}
+
+nav a {
   color: #00933c;
 }
 
@@ -18,40 +22,19 @@ h1,h2,h3,h4,h5 {
 }
 .container {
   margin: 0;
+  padding-top: 1.5rem;
+  background-color: white;
 }
 header {
   background-color: #333;
   line-height: 0;
   border-bottom: .5rem solid #00933c;
+  display: block;
+  height: 6rem;;
 }
-.footer {
-  background-color: #f8f8f8;
-  padding-top: 50px;
+::-webkit-scrollbar { 
+  display: none; 
 }
-.figure-caption {
-  margin: 0 0 2.5rem 0;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Public Sans', sans-serif;
-  border-bottom: 1px solid #eee;
-}
-
-/* nav */
-.wrapper {
-  display: flex;
-  justify-content: left;
-}
-
-nav {
-  height: 100%;
-  position: sticky;
-  top: 0;
-  font-weight: bold;
-}
-main {
-  min-height: 100vh;
-}
-
 .hamburger-container {
   cursor: pointer;
   display: inline-block;
@@ -67,6 +50,104 @@ main {
   background-color: #f8f8f8;
   margin: 8px 0;
   transition: 0.4s;
+}
+
+hr {
+  border: 0;
+  height: 1rem;
+  margin: 0 -2rem 2.5rem -2rem;
+  background-color: #f8f8f8;
+}
+
+/* Navigation */
+
+/* base stylefor mobile */
+#nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  left: -90%;
+  display: block;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-color: white;
+}
+
+/* when nav is open, the body has class "nav-open" */
+.nav-open #nav {
+  left: 0;
+}
+
+#body {
+  padding-left: 0%;
+}
+.nav-open #body {
+  padding-left: 90%;
+}
+#body header {
+  position: sticky;
+  top:0;
+  z-index: 100;
+}
+
+
+/* Larger than mobile screen */
+@media (min-width: 40.0rem) {
+}
+
+/* Larger than tablet screen */
+@media (min-width: 80.0rem) {
+  #nav {
+    left: 0;
+    width: 30rem;
+  }
+  #body {
+    padding-left: 31rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  #body header {
+    display: none;
+  }
+  #nav .close {
+    display: none;
+  }
+}
+
+/* Larger than desktop screen */
+@media (min-width: 120.0rem) {
+  #nav {
+    width: 40rem;
+  }
+  #body {
+    padding-left: 41rem;
+  }
+}
+
+
+
+footer {
+  background-color: #f8f8f8;
+  padding-top: 50px;
+  display: block;
+}
+.figure-caption {
+  margin: 0 0 2.5rem 0;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Public Sans', sans-serif;
+  border-bottom: 1px solid #eee;
+}
+
+nav {
+  font-weight: bold;
+}
+
+main {
+  min-height: 100vh;
+  padding-top: 2rem;
+  display: block;
 }
 
 nav div.item {
@@ -124,10 +205,10 @@ li {
   margin-bottom: 0;
 }
 
-main a {
+a {
   color: #0366d6
 }
-main a:hover {
+a:hover {
   color: #0366d6;
   text-decoration: underline;
 }
