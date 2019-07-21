@@ -98,9 +98,7 @@ socket.on('md', (str) => {
     })
 
     // do mathjax on the whole page
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-    });
+    MathJax.Hub.Config(MATHJAX_CONFIG);
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
 })

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>mdnb</title>
+  <title>__MDNB_TITLE__</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,7 +22,15 @@
   <link rel="stylesheet" href="/third-party/emojione.min.css"/>
   <meta name="theme-color" content="#fafafa">
   <link rel="stylesheet" href="/mdnb.css"/>
+
+  <!-- this will return with the custom-css file if there is one in the config -->
+  <link rel="stylesheet" href="/theme.css"/>
+
   <script src='/third-party/mathjax/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+  <!-- custom head, the html file from the config will be injected here -->
+  <!-- __MDNB_CUSTOM_HEAD__ -->
+  <!-- end custom head -->
 </head>
 
 <body>
@@ -65,6 +73,7 @@
   <script src="/third-party/showdown.js"></script>
   <script src="/third-party/highlight.min.js"></script>
   <script src="/third-party/plotly.min.js"></script>
+  <script src="/mathjax-config.js"></script>
   <script src="/plot.js"></script>
   <script src="/app.js"></script>
 </body>

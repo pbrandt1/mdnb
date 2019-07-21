@@ -1,16 +1,9 @@
-:root {
-  --accent-color: black;
-  /* --main-color: #299947; */
-  /* --nav-color: #299947; */
-  --main-color: #00933c;
-  --nav-color: #00933c;
-}
 a {
-  color: var(--main-color);
+  color: #00933c;
 }
 
 pre {
-  border-color: var(--main-color);
+  border-color: #00933c;
 }
 
 body,p {
@@ -29,7 +22,7 @@ h1,h2,h3,h4,h5 {
 header {
   background-color: #333;
   line-height: 0;
-  border-bottom: .5rem solid var(--main-color);
+  border-bottom: .5rem solid #00933c;
 }
 .footer {
   background-color: #f8f8f8;
@@ -85,7 +78,7 @@ nav div.item {
 
 nav div.item.active {
   color: #eee;
-  background-color: var(--main-color);
+  background-color: #00933c;
 }
 
 .indent {
@@ -99,15 +92,14 @@ nav div.item.active {
   display: inline-block;
   border-top: 0.55rem solid transparent;
   border-bottom: 0.55rem solid transparent;
-  border-left: 0.55rem solid var(--nav-color);
+  border-left: 0.55rem solid black;
   margin-right: 0.55rem;
-  color: var(--nav-color);
 }
 
 .dir.open {
-  border: 1px solid var(--nav-color);
-  border-bottom: .4rem solid var(--nav-color);
-  border-right: .4rem solid var(--nav-color);
+  border: 1px solid black;
+  border-bottom: .4rem solid black;
+  border-right: .4rem solid black;
   border-top: .4rem solid transparent;
   border-left: .4rem solid transparent;
 }

@@ -11,12 +11,57 @@ function mdnb(options) {
     options.root = options.root || path.resolve('.')
     options.ignore = options.ignore || ['node_modules', 'git']
     options.title = options.title || path.basename(path.resolve('.'))
-    options.MathJax = options.MathJax || {}
+    options.MathJax = options.MathJax || {
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    };
+    options.custom_css = options.custom_css || '';
+    options.custom_head = options.custom_head || '';
+
+    console.log(options)
 
     const app = express()
     var http = require('http').createServer(app);
     var io = require('socket.io')(http);
 
+    //
+    // Inject the user configuration into the index.html file
+    //
+    var indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8')
+
+    // handle options.custom_css
+    var customTheme = ''
+    if (fs.existsSync(path.resolve(options.custom_css))) {
+        customTheme = fs.readFileSync(options.custom_css, 'utf8')
+    } else if (options.custom_css) {
+        console.log('Warning'.red.bold + ` custom css file "${options.custom_css}" not found`.bold)
+    }
+    app.get('/theme.css', (req, res) => {
+        res.setHeader('Content-Type', 'text/css; charset=UTF-8')
+        debugger;
+        res.send(customTheme);
+        // console.log('sent', customTheme)
+    })
+
+    // handle options.title
+    debugger
+    indexHtml = indexHtml.replace('__MDNB_TITLE__', options.title)
+
+
+    // handle options.custom_head
+    var customHead = ''
+    if (fs.existsSync(options.custom_head)) {
+        customHead = fs.readFileSync(options.custom_head, 'utf8')
+    } else if (options.custom_head) {
+        console.log('Warning'.red.bold + ` custom head html file "${options.custom_head}" not found`.bold)
+    }
+    indexHtml = indexHtml.replace('<!-- __MDNB_CUSTOM_HEAD__ -->', customHead)
+
+    // handle options.MathJax
+    app.get('/mathjax-config.js', (req, res) => {
+        var config = JSON.stringify(options.MathJax);
+        res.setHeader('Content-Type', 'application/javascript; charset=UTF-8');
+        res.send(`var MATHJAX_CONFIG=${config};MathJax.Hub.Config(MATHJAX_CONFIG);`)
+    })
 
     //
     // find all the markdown files
@@ -47,7 +92,8 @@ function mdnb(options) {
     //
     markdowns.map(f => {
         app.get(f, (req, res) => {
-            res.sendFile(path.join(__dirname, 'index.html'))
+            res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+            res.send(indexHtml);
         })
     })
 
@@ -65,6 +111,7 @@ function mdnb(options) {
         // or serve an error page because no markdowns were found
         res.send('no markdown files were found, check your logs in the console')
     }
+
 
     // static files yo
     app.use(express.static(options.root))

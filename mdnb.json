@@ -3,13 +3,15 @@
 
   "title": "mdnb",
   "favicon": "favicon.png",
-  "custom-css": "mdnb-theme.css",
-  "custom-head": "mdnb-head.html",
+  "custom_css": "mdnb-theme.css",
+  "custom_head": "mdnb-head.html",
 
   "MathJax": {
-    
+    "tex2jax": {
+      "inlineMath": [["$","$"], ["\\(","\\)"]]
+    }
   },
-  
+
   "ignore": [
     "node_modules",
     ".git"

@@ -1,5 +1,4 @@
-# mdnb
-
+![mdnb](static-files/mdnb.png)
 
 :warning: PRE-ALPHA, SEEKING INPUT :warning:
 
@@ -40,6 +39,31 @@ screenshots please
 
 
 ## Customization
+
+Here's a default mdnb.json. Change what you will.
+
+```json
+{
+  "port": 8080,
+
+  "title": "mdnb",
+  "favicon": "favicon.png",
+  "custom-css": "mdnb-theme.css",
+  "custom-head": "mdnb-head.html",
+
+  "MathJax": {
+    "tex2jax": {
+      "inlineMath": [["$","$"], ["\\(","\\)"]]
+    }
+  },
+  
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
+
+```
 
 Copy the default mdnb.json file and change what you want. Put it in the root directory of your thing. If you don't want to clutter your root, you can use the `-f` option, like `mdnb -f "some/config/file.json"`.
 
@@ -98,8 +122,9 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [x] make demo plotly
 - [ ] make the navbar scroll and stuff
 - [ ] make the hamburger menu work
-- [ ] add options for title and make index.html a template
+- [x] add options for title and make index.html a template
 - [ ] make a search bar
 - [ ] make loading fast by rendering before executing javascript
-- [ ] allow custom css somehow
+- [x] allow custom css somehow
+- [x] allow loading custom header html
 - [ ] add screenshots to readme, show live reloading
