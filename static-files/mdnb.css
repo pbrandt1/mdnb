@@ -35,11 +35,12 @@ header {
   display: none; 
 }
 
-.hamburger-icon {
+.nav-icon {
   cursor: pointer;
   display: inline-block;
   margin-left: 1.5rem;
   font-size: 4rem;
+  display: inline-block;
 }
 
 hr {
@@ -103,7 +104,7 @@ hr {
   #body header {
     display: none;
   }
-  #nav .close {
+  .nav-icon {
     display: none;
   }
 }

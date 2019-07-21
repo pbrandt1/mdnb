@@ -39,7 +39,7 @@ function mdnb(options) {
     })
 
     // handle options.title
-    indexHtml = indexHtml.replace('__MDNB_TITLE__', options.title)
+    indexHtml = indexHtml.replace(/__MDNB_TITLE__/g, options.title)
 
 
     // handle options.custom_head
