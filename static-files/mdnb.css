@@ -27,29 +27,19 @@ h1,h2,h3,h4,h5 {
 }
 header {
   background-color: #333;
-  line-height: 0;
+  color: #bbb;
   border-bottom: .5rem solid #00933c;
   display: block;
-  height: 6rem;;
 }
 ::-webkit-scrollbar { 
   display: none; 
 }
-.hamburger-container {
+
+.hamburger-icon {
   cursor: pointer;
   display: inline-block;
-  margin: 1rem;
-  line-height: 0;
-  position: sticky;
-  top: 0;
-}
-
-.hamburger {
-  width: 35px;
-  height: 3px;
-  background-color: #f8f8f8;
-  margin: 8px 0;
-  transition: 0.4s;
+  margin-left: 1.5rem;
+  font-size: 4rem;
 }
 
 hr {
@@ -72,6 +62,8 @@ hr {
   overflow-y: auto;
   scrollbar-width: none;
   background-color: white;
+  transition: 0.5s;
+  z-index: 200;
 }
 
 /* when nav is open, the body has class "nav-open" */
@@ -81,9 +73,10 @@ hr {
 
 #body {
   padding-left: 0%;
+  transition: 0.5s;
 }
 .nav-open #body {
-  padding-left: 90%;
+  /* padding-left: 90%; */
 }
 #body header {
   position: sticky;

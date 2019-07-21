@@ -17,8 +17,6 @@ function mdnb(options) {
     options.custom_css = options.custom_css || '';
     options.custom_head = options.custom_head || '';
 
-    console.log(options)
-
     const app = express()
     var http = require('http').createServer(app);
     var io = require('socket.io')(http);
@@ -37,13 +35,10 @@ function mdnb(options) {
     }
     app.get('/theme.css', (req, res) => {
         res.setHeader('Content-Type', 'text/css; charset=UTF-8')
-        debugger;
         res.send(customTheme);
-        // console.log('sent', customTheme)
     })
 
     // handle options.title
-    debugger
     indexHtml = indexHtml.replace('__MDNB_TITLE__', options.title)
 
 

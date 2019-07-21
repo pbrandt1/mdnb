@@ -213,6 +213,14 @@ function goto(md) {
     return false;
 }
 
+// setup nav open/close listeners
+document.querySelector(".nav-open").addEventListener('click', () => {
+    document.body.classList.add('nav-open')
+})
+document.querySelector(".nav-close").addEventListener('click', () => {
+    document.body.classList.remove('nav-open')
+})
+
 // start the party
 goto(location.pathname);
 

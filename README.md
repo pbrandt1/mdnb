@@ -120,8 +120,8 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [x] mathjax offline
 - [x] command line options
 - [x] make demo plotly
-- [ ] make the navbar scroll and stuff
-- [ ] make the hamburger menu work
+- [x] make the navbar scroll and stuff
+- [x] make the hamburger menu work
 - [x] add options for title and make index.html a template
 - [x] allow custom css somehow
 - [x] allow loading custom header html
