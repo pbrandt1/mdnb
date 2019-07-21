@@ -3,11 +3,23 @@ function insertAfter(newNode, referenceNode) {
 }
 
 function print() {
+    // always console.log it
     console.log.apply(null, Array.prototype.slice.call(arguments));
-    var div = document.createElement('div');
-    div.innerHTML = Array.prototype.slice.call(arguments).join(' ');
-    var $div = insertAfter(div, mdnb.current_node);
 
+    // if an print log div already exists, append to that. otherwise create a new one.
+    var div;
+    if (mdnb.current_node.nextSibling && mdnb.current_node.nextSibling.classList.contains('message')) {
+        div = mdnb.current_node.nextSibling;  
+    } else {
+        div = document.createElement('div')
+        div.classList.add('message')
+        div.innerHTML = "<div>Output:</div><textarea />";
+        div = insertAfter(div, mdnb.current_node)
+    }
+
+    var textarea = div.childNodes[1]
+    textarea.value += '\n' + Array.prototype.slice.call(arguments).join(' ');
+    textarea.style.height = textarea.scrollHeight + 'px';
 }
 
 function plot(x, y, title, legend) {

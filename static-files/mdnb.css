@@ -215,10 +215,23 @@ pre.error {
   border-color: #ee352e;
 }
 
+.message {
+  margin-top: -2rem;
+  font-family: monospace;
+}
+
+.message textarea {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border: 0;
+  min-height: 0;
+  height: auto;
+  background-color: #f6f8fa;
+  resize: none;
+}
+
 .error-message {
   color: #ee352e;
-  margin-top: -2.5rem;
-  font-family: monospace;
 }
 
 .error-line {
