@@ -5,19 +5,26 @@
   "main": "mdnb.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node mdnb.js"
   },
   "bin": {
     "mdnb": "bin/mdnb.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["markdown"],
+  "author": {
+    "name": "Pete Brandt",
+    "email": "peter.m.brandt@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.3.3",
     "express": "^4.17.1",
     "socket.io": "^2.2.0",
     "yargs": "^13.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbrandt1.mdnb.git"
+  }
 }
