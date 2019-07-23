@@ -11,6 +11,7 @@ function mdnb(options) {
     options.root = options.root || path.resolve('.')
     options.ignore = options.ignore || ['node_modules', 'git']
     options.title = options.title || path.basename(path.resolve('.'))
+    options.favicon = options.favicon || path.join(__dirname, 'static-files', 'mdnb.png')
     options.MathJax = options.MathJax || {
         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     };
@@ -41,6 +42,14 @@ function mdnb(options) {
     // handle options.title
     indexHtml = indexHtml.replace(/__MDNB_TITLE__/g, options.title)
 
+    // handle options.favicon
+    if (!fs.existsSync(options.favicon)) {
+        console.log('Warning'.red.bold + ` custom favicon "${options.favicon}" not found`.bold)
+    } else {
+        app.get('/favicon.png', (req, res) => {
+            res.sendFile(options.favicon);
+        })
+    }
 
     // handle options.custom_head
     var customHead = ''

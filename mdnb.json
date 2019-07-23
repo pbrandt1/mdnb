@@ -2,7 +2,6 @@
   "port": 8080,
 
   "title": "mdnb",
-  "favicon": "favicon.png",
   "custom_css": "mdnb-theme.css",
   "custom_head": "mdnb-head.html",
 
