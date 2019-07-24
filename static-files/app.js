@@ -61,7 +61,7 @@ socket.on('md', (str) => {
     var html = converter.makeHtml(str)
 
     // emojify it
-    // html = emojione.toImage(html);
+    html = emojione.toImage(html);
 
     // load it into the DOM
     $content.innerHTML = html;
