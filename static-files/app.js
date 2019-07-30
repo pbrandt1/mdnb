@@ -199,7 +199,7 @@ socket.on('tree', (files) => {
 socket.emit('tree', '')
 
 function goto(md) {
-    socket.emit('md', md)
+    socket.emit('md', decodeURIComponent(md))
     document.querySelector('main').innerHTML = 'Loading content...'
     history.pushState({}, md, md);
     // highlight the node in the nav tree
