@@ -1,6 +1,16 @@
-# Printing messages from javascript
+# Inline javascript
 
-Sometimes you'll want to print out some information.
+With `mdnb` you can include a javascript code block, and mdnb will find it and execute it in the browser for you. Behold:
+
+```js
+var a = 10
+var b = 20
+print(a + b)
+```
+
+Notice the output of `print` is shown directly below the executing code block.
+
+This wouldn't be a good demo if we didn't make a fibonacci generator!
 
 ```js
 // prints the ith fibonacci number, starting at 1
@@ -20,7 +30,7 @@ for (var i = 1; i < 5; i++)
     print(fib(i))
 ```
 
-and now for something completely different
+This wouldn't be the BEST demo if we didn't make a fibonacci generator for the COMPLEX domain of numbers! Wow!
 
 ```js
 // a complex var is [real, imaginary]
@@ -45,6 +55,13 @@ print('calculating complex fibonacci numbers')
 
 for (var i = 1; i < 24; i++) {
     var f = complexFib(i);
-    print(i + ': R + I i'.replace('R', f[0]).replace('I', f[1]))
+    var real = f[0]
+    var imaginary = ''
+    if (f[1] > 0) {
+        imaginary = `+${f[1]}i`
+    } else if (f[1] < 0) {
+        imaginary = `${f[1]}i`
+    }
+    print(`${i}: ${real}${imaginary}`)
 }
 ```

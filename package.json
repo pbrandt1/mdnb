@@ -10,7 +10,9 @@
   "bin": {
     "mdnb": "bin/mdnb.js"
   },
-  "keywords": ["markdown"],
+  "keywords": [
+    "markdown"
+  ],
   "author": {
     "name": "Pete Brandt",
     "email": "peter.m.brandt@gmail.com"

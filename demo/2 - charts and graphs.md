@@ -1,19 +1,23 @@
+# Charts and Graphs
+
+`mdnb` uses [plotly](https://plot.ly/javascript/) to provide charts and graphs. You can use inline html and plotly itself just like any other application, or you can use the convenience function `plot` for super simple plots without inline html. I don't really like the `plot` function though, so the API might change a lot. Anyway, here are examples of both.
+
 ## Government job ratings
 
 ```js
 // data from https://bestplacestowork.org/rankings/overall/large
-var nasa = [81.2, 80.9, 78.6, 76.1, 74.6, 74.0, 72.8, 72.5, 74.2, 71.7, 69.7, 69.9, 71.6];
-var hhs = [70.9, 70.4, 66.4, 63.9, 61.8, 61.9, 63.3, 62.7, 64.8, 62.3, 61.3, 62.1, 61.9];
-var commerce = [70.3, 69.2, 67.9, 66.2, 68.7, 67.6, 67.9, 67.5, 68.3, 66.5, 63.5, 64.0, 62.4];
-var transportation = [67.7, 67.6, 63.4, 63.1, 60.4, 60.9, 63.6, 59.5, 60.4, 52.2, 52.9, 59.8, 60.9];
-var intelligence = [66.3, 66.6, 67.0, 67.1, 67.9, 67.3, 70.8, 69.5, 69.0, 70.9, null, null, null];
-var VA = [56.1, 56.7, 55.1, 54.6, 57.3, 56.7, 63.8, 63.6, 66.0, 61.9, 66.2, 61.8];
-var homelandSecurity = [53.1, 52.0, 45.8, 43.1, 44.0, 46.8, 52.9, 56.6, 58.6, 56.2, 49.8, 49.1, null];
-var airforce = [60.4, 60.7, 59.3, 60.0, 56.8, 57.2, 61.5, 62.9, 64.8, 63.6, 63.8, 62.6, 62.3];
-var state = [60.7, 64.0, 66.8, 66.3, 68.2, 65.6, 68.2, 70.0, 70.8, 69.1, 67.9, 66.6, 59.0];
-var agriculture = [59.0, 65.9, 63.1, 59.4, 57.3, 56.1, 57.4, 61.8, 62.0, 60.6, 61.6, 62.7, 60.8];
+var nasa = [81.5, 81.2, 80.9, 78.6, 76.1, 74.6, 74.0, 72.8, 72.5, 74.2, 71.7, 69.7, 69.9, 71.6];
+var hhs = [71.4, 70.9, 70.4, 66.4, 63.9, 61.8, 61.9, 63.3, 62.7, 64.8, 62.3, 61.3, 62.1, 61.9];
+var commerce = [69.6, 70.3, 69.2, 67.9, 66.2, 68.7, 67.6, 67.9, 67.5, 68.3, 66.5, 63.5, 64.0, 62.4];
+var transportation = [65.7, 67.7, 67.6, 63.4, 63.1, 60.4, 60.9, 63.6, 59.5, 60.4, 52.2, 52.9, 59.8, 60.9];
+var intelligence = [69.9, 66.3, 66.6, 67.0, 67.1, 67.9, 67.3, 70.8, 69.5, 69.0, 70.9, null, null, null];
+var VA = [65.3, 56.1, 56.7, 55.1, 54.6, 57.3, 56.7, 63.8, 63.6, 66.0, 61.9, 66.2, 61.8];
+var homelandSecurity = [52.3, 53.1, 52.0, 45.8, 43.1, 44.0, 46.8, 52.9, 56.6, 58.6, 56.2, 49.8, 49.1, null];
+var airforce = [59.4, 60.4, 60.7, 59.3, 60.0, 56.8, 57.2, 61.5, 62.9, 64.8, 63.6, 63.8, 62.6, 62.3];
+var state = [61.3, 60.7, 64.0, 66.8, 66.3, 68.2, 65.6, 68.2, 70.0, 70.8, 69.1, 67.9, 66.6, 59.0];
+var agriculture = [56.7, 59.0, 65.9, 63.1, 59.4, 57.3, 56.1, 57.4, 61.8, 62.0, 60.6, 61.6, 62.7, 60.8];
 
-var years = [2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2007, 2005, 2003];
+var years = [2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2007, 2005, 2003];
 plot(years, [nasa, hhs, commerce, transportation, airforce, state, agriculture, homelandSecurity], 'Government agency scores', ['NASA', 'Health & Human Services', 'Commerce', 'Transportation', 'Air Force', 'State Department', 'Agriculture', 'Homeland Security'])
 ```
 

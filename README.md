@@ -101,7 +101,6 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [Milligram](https://github.com/milligram/milligram)
 - [Public Sans](https://github.com/uswds/public-sans)
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
-- [emojione](https://github.com/joypixels/emojione)
 - [node.js](https://github.com/nodejs/node)
 
 ## Similar things
@@ -126,4 +125,13 @@ Contribute in whatever way you seem appropriate. Just be nice.
 - [x] allow custom css somehow
 - [x] allow loading custom header html
 - [ ] add screenshots to readme, show live reloading
-- [ ] html inside markdown
+- [x] html inside markdown
+- [ ] fix mathjax fonts
+- [ ] click on link closes shelf
+- [ ] click outside of shelf closes shelf
+- [ ] add layout to plotly helper
+- [ ] consolidate helpers
+- [ ] document / quick reference for helpers
+
+
+

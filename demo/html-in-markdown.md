@@ -1,5 +1,23 @@
 # HTML in markdown
 
+In markdown, you can just write html and it's fine.
+
+	<style>
+	.parallelogram {
+		width: 100px;
+		height: 50px;
+		transform: skew(20deg);
+		background: #555;
+	}
+	</style>
+
+	<h2>Parallelogram CSS</h2>
+	<div class="parallelogram"></div>
+
+	above you should see a parallelogram
+	
+---
+
 <style>
 .parallelogram {
 	width: 100px;
@@ -8,28 +26,43 @@
 	background: #555;
 }
 </style>
-</head>
-<body>
 
 <h2>Parallelogram CSS</h2>
 <div class="parallelogram"></div>
+
+above you should see a parallelogram
 
 ---
 
-The html rendered above is repeated below for reference. This isn't like the javascript blocks which execute. You don't need the backticks, you literally just write html into your markdown file and it works (see the source of this markdown file if this isn't clear).
+# Binding input elements
 
-```html
-<style>
-.parallelogram {
-	width: 100px;
-	height: 50px;
-	transform: skew(20deg);
-	background: #555;
-}
-</style>
-</head>
-<body>
+Write your input elements in html in your markdown files and then you'll have access to them in your javascript code blocks.
 
-<h2>Parallelogram CSS</h2>
-<div class="parallelogram"></div>
+
+    <label>Quantity</label>
+    <input type="number" class="quantity" value="1">
+
+    Quantity is: <div class="quantity-display"></div>
+
+    ```js
+    var $quantity = document.querySelector('.quantity-display')
+    mdnb.bind('.quantity', (q) => {
+        $quantity.innerText = q;
+    })
+    ```
+    
+
+---
+
+<label>Quantity</label>
+<input type="number" class="quantity" value="1">
+
+Quantity is: <div class="quantity-display"></div>
+
+```js
+var $quantity = document.querySelector('.quantity-display')
+mdnb.bind('.quantity', (q) => {
+    $quantity.innerText = q;
+})
 ```
+
