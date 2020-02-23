@@ -90,6 +90,12 @@ function mdnb(options) {
     // initiate the recursive recombulator
     read_dir(options.root)
 
+    app.get('*', (req, res, next) => {
+        // an opportunity for verbose logging
+        // console.log(req.url)
+        next()
+    })
+
     //
     // when anyone requests a readme file, serve the index, which will pick up the .md from the URL and fetch the md via socket.io
     // express only really serves static content and stuff
@@ -99,6 +105,12 @@ function mdnb(options) {
             res.setHeader('Content-Type', 'text/html; charset=UTF-8');
             res.send(indexHtml);
         })
+        if (f !== encodeURI(f)) {
+            app.get(encodeURI(f), (req, res) => {
+                res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+                res.send(indexHtml);
+            })
+        }
     })
 
     // if a root-level README exists, redirect / to /README.md
@@ -198,9 +210,10 @@ function mdnb(options) {
 
 
     http.listen(options.port, () => {
-        console.log('Serving and watching:'.cyan.bold)
+        console.log(`Server started at http://localhost:${options.port}\n`.cyan.bold)
+        console.log('Serving and watching:'.bold)
         markdowns.map(md => {
-            console.log(`  http://localhost:${options.port}` + md.replace(/[^\/]+.md/, (md) => md.bold))
+            console.log(`  http://localhost:${options.port}` + md.replace(/[^\/]+.md/, (md) => encodeURI(md).bold))
         })
         console.log('have fun'.gray)
     })
